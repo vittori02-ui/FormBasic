@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="F.png">
+        <title>FORM</title>
+        <script src="eser3.js"></script>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend><h2>SCEGLI</h2></legend>
+                <ul>
+                        <input type="range" id="dim" name="dim" min="100" max="500">
+                        <label for="dim">Inserisci le dimensione della div</label><br>
+                        <input type="color" id="color" name="color">
+                        <label for="color">Scegli il colore</label><br>
+                        <input type="radio" id="bordo" name="css" value="Bordo">
+                        <label for="bordo">Vuoi il bordo?</label><br>
+                        <input type="radio" id="bordo1" name="css" value="tondo">
+                        <label for="bordo1">Vuoi il bordo arotondato</label><br>
+                        <input type="radio" id="ombre" name="css" value="ombre">
+                        <label for="ombre">Vuoi le ombre?</label><br>
+                        <input type="text" id="txt" name="testo">
+                        <label for="txt">Inserisci testo</label>
+                    </ul>
+                    <button type="button" onclick="scelta()">Clicca</button>
+                    <!--<input type="textarea" readonly="true" id="risultato" name="ris"><br><br>-->
+            </fieldset>
+        </form>
+    </body>
+</html>
