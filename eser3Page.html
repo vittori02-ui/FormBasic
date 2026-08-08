@@ -4,17 +4,22 @@
         <title>FORM</title>
         <script src="eser3.js"></script>
          <style>
+            body{
+                background-color: rgb(193, 248, 230);
+            }
             legend{
                 text-align: center;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
             form{
                 text-align: center;
-                margin-left: 30%;
-                width: 500px;
+                margin-left: 15%;
+                width: 1000px;
             }
             ul{
                 text-align: left;
-                margin-left: 10%;
+                margin-left: 40%;
+                margin-top: 2%;
             }
            #box{
                 display: flex;
@@ -22,28 +27,57 @@
                 align-items: center;
                 margin-top: 20px;
             }
+            #testoSinistra             
+            {
+                margin-top: 2%;  
+                margin-left: 1%;              
+            }
+            #testoCentro
+            {
+                margin-top: 2%;
+                margin-left: 1%;
+            }
+            #ant
+            {
+                margin-top: 2%;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.2s;
+            }
         </style>
     </head>
     <body>
         <form>
             <fieldset>
-                <legend><h2>SCEGLI</h2></legend>
+                <legend><h2>CREA IL TUO INIVITO</h2></legend>
+                <input type="range" id="dim" name="dim" min="20"max=500>
+                <label for="dim">Lunghezza</label>
+                <br>
+                <input type="range" id="dim1" name="dim2" min="20" max="500">
+                <label for="dim1">Larghezza</label>
+                <br>
+                <input type="color" id="col" name="col">
+                <label for="col">Colore sfondo</label>
                 <ul>
-                        <input type="range" id="dim" name="dim" min="100" max="500">
-                        <label for="dim">Inserisci le dimensione della div</label><br>
-                        <input type="color" id="color" name="color">
-                        <label for="color">Scegli il colore</label><br>
-                        <input type="radio" id="bordo" name="css" value="Bordo">
-                        <label for="bordo">Vuoi il bordo?</label><br>
-                        <input type="radio" id="bordo1" name="css" value="tondo">
-                        <label for="bordo1">Vuoi il bordo arotondato</label><br>
-                        <input type="radio" id="ombre" name="css" value="ombre">
-                        <label for="ombre">Vuoi le ombre?</label><br>
-                        <input type="text" id="txt" name="testo">
-                        <label for="txt">Inserisci testo</label>
-                    </ul>
-                    <button type="button" onclick="scelta()">Clicca</button>
-                    <!--<input type="textarea" readonly="true" id="risultato" name="ris"><br><br>-->
+                    <input type="checkbox" id="bordo1" name="stile">
+                    <label for="bordo1">Bordo arotondato</label>
+                    <br>
+                    <input type="checkbox" id="bordo2" name="stile">
+                    <label for="bordo2">Ombre</label>                    
+                </ul>
+                <input type="textarea" id="testoDestra">
+                <label for="testoDestra">Inserisci il testo per il lato destro</label>
+                <input type="textarea" id="testoCentro">
+                <label for="testoCentro">Inserisci il testo al centro</label>
+                <input type="textarea" id="testoSinistra">
+                <label for="testoSinistra"></label> 
+                <button type="button" id="ant" onclick="scelta()">ANTEPRIMA</button>
+                <div id="box"></div>
             </fieldset>
         </form>
     </body>
