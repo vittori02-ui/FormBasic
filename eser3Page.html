@@ -3,6 +3,7 @@
         <link rel="icon" type="image/x-icon" href="F.png">
         <title>FORM</title>
         <script src="eser3.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
          <style>
             body{
                 background-color: rgb(193, 248, 230);
@@ -27,7 +28,7 @@
                 align-items: center;
                 margin-top: 20px;
             }
-            #testoSinistra             
+           /* #testoSinistra             
             {
                 margin-top: 2%;  
                 margin-left: 1%;              
@@ -36,8 +37,8 @@
             {
                 margin-top: 2%;
                 margin-left: 1%;
-            }
-            #ant
+            }*/
+            #ant,#pdf
             {
                 margin-top: 2%;
                 padding: 10px 20px;
@@ -49,6 +50,31 @@
                 cursor: pointer;
                 transition: 0.2s;
             }
+            .riga-testi
+            {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin-top: 20px;
+            }
+            .campo-testo
+            {
+                display: flex;
+                flex-direction: column
+            }
+            .campo-testo label
+            {
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            textarea
+            {
+                resize: none;
+                height: 60px;
+                padding: 5px;
+                font-family: Verdana;
+            }
+            
         </style>
     </head>
     <body>
@@ -70,14 +96,25 @@
                     <input type="checkbox" id="bordo2" name="stile">
                     <label for="bordo2">Ombre</label>                    
                 </ul>
-                <input type="textarea" id="testoDestra">
-                <label for="testoDestra">Inserisci il testo per il lato destro</label>
-                <input type="textarea" id="testoCentro">
-                <label for="testoCentro">Inserisci il testo al centro</label>
-                <input type="textarea" id="testoSinistra">
-                <label for="testoSinistra"></label> 
+                <div class="riga-testi">
+                    <div class="campo-testo">
+                        <label for="testoDestra" id="dr">Inserisci il testo per il lato destro</label>
+                        <input type="textarea" id="testoDestra">
+                    </div>
+                    <div class="campo-testo">
+                        <label for="testoCentro" id="dc">Inserisci il testo al centro</label>
+                        <input type="textarea" id="testoCentro">
+                    </div>
+                    <div class="campo-testo">
+                        <label for="testoSinistra" id="ds">Inserisci il testo per il lato sinistro</label>
+                        <input type="textarea" id="testoSinistra"> 
+                    </div>
+                </div>
+               <br>
                 <button type="button" id="ant" onclick="scelta()">ANTEPRIMA</button>
                 <div id="box"></div>
+                <br>
+                <button type="button" id="pdf" onclick="scaricaPDF()">SCARICA PDF</button>
             </fieldset>
         </form>
     </body>
