@@ -8,7 +8,7 @@ function scelta() {
     let bordoArrotondato=document.getElementById("bordo1").checked;
     let ombra=document.getElementById("bordo2").checked;
 
-    let box=document.getElementById("box")
+    let box=document.getElementById("invito")
     box.innerHTML="";
     let nuovaDiv=document.createElement("div");
     nuovaDiv.style.width=larghezza+"px";
@@ -38,18 +38,19 @@ function scelta() {
 }
 function scaricaPDF()
 {
-    let elemento=document.getElementById("box");
+    let elemento=document.getElementById("invito");
     let larghezzaPx=elemento.offsetWidth;
     let aletezzaPx=elemento.offsetHeight;
     let lunghezzaMM=larghezzaPx/3.78;
     let altezzaMM=aletezzaPx/3.78;
     let opzioni=
     {
-        margin:10,
+        margin:0,
         filename:"invito.pdf",
         image:{type:"jpeg",quality:1},
-        html2canvas:{scale:2},
-        jsPDF:{unit:"mm",format:[lunghezzaMM,altezzaMM],orientation:"landscape"}
+        html2canvas:{scale:1},
+        pagebreak:{avoid: 'div'},
+        jsPDF:{unit:"mm",format:[lunghezzaMM,altezzaMM],orientation:"landscape",compress:false}
     };
     html2pdf().set(opzioni).from(elemento).save();
 }
